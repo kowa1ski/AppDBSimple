@@ -36,10 +36,19 @@ public class DataBaseManager {
         cambiando el contexto ,this, a context como variable
 
      */
+    /*
+    declaramos fuera del método DataBaseMAnagger(...) las variables que vamos a usar
+    para poder llamarlas también desde los demás métodos como el de insertar(...)
+     */
+
+    DbHelper helper;
+    SQLiteDatabase db;
+
+
     public DataBaseManager(Context context) {
 
-        DbHelper helper = new DbHelper(context);
-        SQLiteDatabase db = helper.getWritableDatabase();
+        helper = new DbHelper(context);
+        db = helper.getWritableDatabase();
 
 
 
@@ -56,7 +65,6 @@ public class DataBaseManager {
      */
 
     public void insertar (String nombre, String telefono){
-
 
 
     }
