@@ -125,8 +125,9 @@ public class DataBaseManager {
 
         // 1. ponemos la variable TABLE_NAME y, creada la columnas, pues la columnas también.
         // Después todas null.
+        // 2. return, en esta expresión que devuelve un cursor
 
-        db.query(TABLE_NAME, columnas, null, null, null, null, null);
+        return db.query(TABLE_NAME, columnas, null, null, null, null, null);
 
     }
 
