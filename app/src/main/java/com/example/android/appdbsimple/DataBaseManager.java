@@ -2,6 +2,7 @@ package com.example.android.appdbsimple;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
 
@@ -110,6 +111,18 @@ public class DataBaseManager {
 
         // db.update(TABLA, ContentValues, Clausula WHERE, Argumentos WHERE)
         db.update(TABLE_NAME, generarContentValues(nombre, nuevoTelefono), CN_NAME+"=?", new String[]{nombre, nuevoTelefono});
+
+    }
+
+    // Hacemos un cursor para cargar los contactos que se mostrarán en la lista. Comenzando...
+    public Cursor cargarCursorContactos(){
+
+
+
+        // db.query(String TABLE, String[] columnas, String selection, String[] selectionArgs, String groupBy,
+        // String having, String orderBy)
+
+        db.query(TABLE_NAME, )
 
     }
 
