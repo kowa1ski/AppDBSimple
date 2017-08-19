@@ -56,17 +56,9 @@ public class DataBaseManager {
     }
 
     /*
-    1. Estamos creando un método insertar. Si vamos al MainActivity y ponemos
-    ,
-    manager.
-    ,
-    ya nos sadría el método insertar como disponible con los parámetros
-    que le hemos exigido.
-
+    Creamos este método para ser llamado desde otros.
      */
-
-    public void insertar (String nombre, String telefono){
-
+    public ContentValues generarContentValues(String nombre, String telefono){
 
         // Este bloque de código se utiliza mucho
         ContentValues values = new ContentValues();
@@ -74,13 +66,34 @@ public class DataBaseManager {
         values.put(CN_NAME, nombre);
         values.put(CN_PHONE, telefono);
 
+        return values;
+
+    }
+
+    /*
+    1. Estamos creando un método insertar. Si vamos al MainActivity y ponemos
+    ,
+    manager.
+    ,
+    ya nos sadría el método insertar como disponible con los parámetros
+    que le hemos exigido.
+
+    2. Hemos creado un ContentValues y lo sacamos a una función en otro método.
+
+     */
+
+    public void insertar (String nombre, String telefono){
+
+
+
+
 
 
         // el NullColumHack se usa porque hace falta que haya un campo null para compatibilidad
         // con otras versiones. En SQLite sirve para ponerlo en null, siempre siempre.
 
         // db.insert(TABLA, NullColumHack, ContentValues)
-        db.insert(TABLE_NAME, null, values);
+        db.insert(TABLE_NAME, null, generarContentValues(nombre, telefono));
 
 
     }
