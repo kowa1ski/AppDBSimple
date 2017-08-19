@@ -1,5 +1,8 @@
 package com.example.android.appdbsimple;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
 /**
  * Created by Usuario on 19/08/2017.
  */
@@ -22,4 +25,21 @@ public class DataBaseManager {
             + CN_NAME + " TEXT NOT NULL, "
             + CN_PHONE + " TEXT);";
 
+    /*
+    Creamos el constructor y le cortapegamos los iniciadores del anterior comit.
+    También, dado que necesitamos un contexto, recuerda esto:
+    ,
+    public DbHelper(Context context) {
+        super(context, DB_NAME, null, DB_SCHEME_VERSION);
+        ,
+        hacemos necesario que se pase el contexto al constructor con los de Context context y
+        cambiando el contexto ,this, a context como variable
+
+     */
+    public DataBaseManager(Context context) {
+
+        DbHelper helper = new DbHelper(context);
+        SQLiteDatabase db = helper.getWritableDatabase();
+
+    }
 }
