@@ -117,12 +117,16 @@ public class DataBaseManager {
     // Hacemos un cursor para cargar los contactos que se mostrarán en la lista. Comenzando...
     public Cursor cargarCursorContactos(){
 
-
+        //Creamos el String de las columnas
+        String[] columnas = new String[]{CN_ID, CN_NAME, CN_PHONE};
 
         // db.query(String TABLE, String[] columnas, String selection, String[] selectionArgs, String groupBy,
         // String having, String orderBy)
 
-        db.query(TABLE_NAME, )
+        // 1. ponemos la variable TABLE_NAME y, creada la columnas, pues la columnas también.
+        // Después todas null.
+
+        db.query(TABLE_NAME, columnas, null, null, null, null, null);
 
     }
 
