@@ -21,12 +21,9 @@ public class MainActivity extends AppCompatActivity {
           */
         DataBaseManager manager = new DataBaseManager(this);
 
-
-
-
-
-
-
+        // Insertamos un par de nombres
+        manager.insertar("Pablo", "666 666 666");
+        manager.insertar("Juan", "666 99 99 99");
 
 
     }
