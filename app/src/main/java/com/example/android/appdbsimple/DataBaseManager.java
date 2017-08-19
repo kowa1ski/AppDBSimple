@@ -1,5 +1,6 @@
 package com.example.android.appdbsimple;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -65,6 +66,15 @@ public class DataBaseManager {
      */
 
     public void insertar (String nombre, String telefono){
+
+
+        // Este bloque de código se utiliza mucho
+        ContentValues values = new ContentValues();
+        // Valores.put(COLUMNA, valor)
+        values.put(CN_NAME, nombre);
+        values.put(CN_PHONE, telefono);
+
+
 
         // el NullColumHack se usa porque hace falta que haya un campo null para compatibilidad
         // con otras versiones. En SQLite sirve para ponerlo en null, siempre siempre.
