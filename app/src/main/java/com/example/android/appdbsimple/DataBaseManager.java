@@ -3,6 +3,7 @@ package com.example.android.appdbsimple;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.text.TextUtils;
 
 /**
  * Created by Usuario on 19/08/2017.
@@ -90,9 +91,25 @@ public class DataBaseManager {
 
     }
 
+
+    // Creamos la función eliminar
     public void eliminar(String nombre){
 
-        //
+        //db.delete(TABLA, Clausula WHERE, Argumentos WHERE)
+        db.delete(TABLE_NAME, CN_NAME+"=?", new String[]{nombre});
+
+    }
+
+    public void eliminarMultiple(String nombre1, String nombre2) {
+
+        db.delete(TABLE_NAME, CN_NAME+"IN (?,?)", new String[]{nombre1, nombre2});
+
+    }
+
+    public void modificarTelefono(String nombre, String nuevoTelefono){
+
+        // db.update(TABLA, ContentValues, Clausula WHERE, Argumentos WHERE)
+        db.update(TABLE_NAME, generarContentValues(nombre, nuevoTelefono), CN_NAME+"=?", new String[]{nombre, nuevoTelefono});
 
     }
 
