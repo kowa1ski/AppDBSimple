@@ -41,5 +41,38 @@ public class DataBaseManager {
         DbHelper helper = new DbHelper(context);
         SQLiteDatabase db = helper.getWritableDatabase();
 
+
+
     }
+
+    /*
+    1. Estamos creando un método insertar. Si vamos al MainActivity y ponemos
+    ,
+    manager.
+    ,
+    ya nos sadría el método insertar como disponible con los parámetros
+    que le hemos exigido.
+
+     */
+
+    public void insertar (String nombre, String telefono){
+
+
+
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
