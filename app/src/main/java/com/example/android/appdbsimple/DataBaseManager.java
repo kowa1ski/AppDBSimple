@@ -66,6 +66,12 @@ public class DataBaseManager {
 
     public void insertar (String nombre, String telefono){
 
+        // el NullColumHack se usa porque hace falta que haya un campo null para compatibilidad
+        // con otras versiones. En SQLite sirve para ponerlo en null, siempre siempre.
+
+        // db.insert(TABLA, NullColumHack, ContentValues)
+        db.insert(TABLE_NAME, null, values);
+
 
     }
 
