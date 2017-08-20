@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
 
 /**
- * Created by Usuario on 19/08/2017.
+ * Created by Kovalsk1 on 19/08/2017.
  */
 
 public class DataBaseManager {
@@ -131,18 +131,4 @@ public class DataBaseManager {
 
     }
 
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
